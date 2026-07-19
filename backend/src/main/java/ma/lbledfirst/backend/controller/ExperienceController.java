@@ -44,6 +44,11 @@ public class ExperienceController {
         return service.update(id, experience);
     }
 
+    @PutMapping("/{id}/publish")
+public Experience publish(@PathVariable Long id) {
+    return service.publish(id);
+}
+
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id) {
         service.delete(id);

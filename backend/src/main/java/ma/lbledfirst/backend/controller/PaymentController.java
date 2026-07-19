@@ -44,6 +44,11 @@ public class PaymentController {
         return service.update(id, payment);
     }
 
+    @PutMapping("/{id}/succeed")
+public Payment markSucceeded(@PathVariable Long id) {
+    return service.markSucceeded(id);
+}
+
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id) {
         service.delete(id);

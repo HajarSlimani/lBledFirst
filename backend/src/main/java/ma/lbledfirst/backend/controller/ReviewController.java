@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/api/reviews")
 public class ReviewController {
@@ -34,9 +36,9 @@ public class ReviewController {
     }
 
     @PostMapping
-    public Review create(@RequestBody Review review) {
-        return service.save(review);
-    }
+public Review create(@Valid @RequestBody Review review) {
+    return service.save(review);
+}
 
     @PutMapping("/{id}")
     public Review update(@PathVariable Long id, @RequestBody Review review) {

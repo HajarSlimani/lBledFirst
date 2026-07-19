@@ -44,6 +44,11 @@ public class NotificationController {
         return service.update(id, notification);
     }
 
+    @PutMapping("/{id}/read")
+public Notification markAsRead(@PathVariable Long id) {
+    return service.markAsRead(id);
+}
+
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id) {
         service.delete(id);

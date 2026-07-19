@@ -44,6 +44,11 @@ public class MessageController {
         return service.update(id, message);
     }
 
+    @PutMapping("/{id}/read")
+public Message markAsRead(@PathVariable Long id) {
+    return service.markAsRead(id);
+}
+
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id) {
         service.delete(id);
